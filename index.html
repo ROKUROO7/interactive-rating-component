@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Interactive rating component</title>
+  
+  <link rel="stylesheet" href="./scss/style.css">
+  <script defer src="script.js"></script>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  
+  <main class="main-container">
+  <!-- Rating state start -->
+  <form id="feedback_form" class="feedback">
+    
+    <header class="feedback_header">
+      <img src="./images/icon-star.svg" alt="star icon" />
+    </header>
+    
+    <section>
+      
+      <h1 class="feedback_title">How did we do?</h1>
+
+      <p class="feedback_description">Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!</p>
+      
+      <ul class="feedback_buttons-list">
+        <li><button class="feedback_button" type="button">1</button></li>
+        <li><button class="feedback_button" type="button">2</button></li>
+        <li><button class="feedback_button" type="button">3</button></li>
+        <li><button class="feedback_button" type="button">4</button></li>
+        <li><button class="feedback_button" type="button">5</button></li>
+      </ul>
+    
+    <button class="feedback_submit-button" type="submit">Submit</button>
+    
+    </section>
+  
+  </form>
+  <!-- Rating state end -->
+
+  <!-- Thank you state start -->
+  <article id="custom-Alert" class="alert alert--inactive">
+  
+    <header class="alert_header">
+      
+      <img src="./images/illustration-thank-you.svg" alt="Thank you image" />
+      
+      <p class="alert_user-rating">You selected <span id="user-rating"><!-- Add rating here --></span> out of 5</p>
+      
+    </header>
+    
+    <section class="alert_section">
+      
+      <h2 class="alert_title">Thank you!</h2>
+
+      <p class="alert_description">We appreciate you taking the time to give a rating. If you ever need more support, don’t hesitate to get in touch!</p>
+      
+    </section>
+    
+  </article>
+  <!-- Thank you state end -->
+  
+  </main>
+  
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">ROKUROO7</a>.
+  </footer>
+  
+</body>
+</html>
