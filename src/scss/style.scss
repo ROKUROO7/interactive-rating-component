@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap');
+
+@mixin overpass($weight) {
+  font-family: "Overpass", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: $weight;
+  font-style: normal;
+}
+
+// Colors
+/// Primary
+$Orange500: hsl(25, 97%, 53%);
+
+/// Neutral
+$White: hsl(0, 100%, 100%);
+$Grey500: hsl(217, 12%, 63%);
+$Grey500low: hsla(217, 12%, 63%, 0.1);
+$Grey900: hsl(213, 19%, 18%);
+$Grey900low: hsla(213, 19%, 18%, 0.82);
+$Grey950: hsl(216, 12%, 8%);
+
+// Weights
+$Weight400: 400;
+$Weight700: 700;
+$Weight850: 850;
+
+// Typography
+$smaller: 0.5rem;
+$small: 0.875rem;
+$standerd: 0.9375rem; //15px
+$default: 1rem;
+$medium: 1.5rem;
+$large: 2rem;
+$larger: 2.5rem;
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  line-height: 1;
+  box-sizing: border-box;
+  box-shadow: none;
+}
+
+.main-container {
+  @include overpass($Weight400);
+  max-width: 100vw;
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  padding: $medium;
+  color: $Grey500;
+  background-color: $Grey950;
+}
+
+.feedback {
+  display: flex;
+  flex-direction: column;
+  row-gap: $medium;
+  padding: $medium;
+  border-radius: $standerd;
+  background-color: $Grey900low;
+  
+  &--inactive {
+    display: none;
+  }
+  
+  &_header {
+    display: grid;
+    place-items: center;
+    max-width: fit-content;
+    max-height: 100%;
+    border-radius: 100%;
+    background-color: $Grey500low;
+    
+    img {
+      width: $larger;
+      padding: 0.8rem;
+    }
+  }
+  
+  &_title {
+    font-size: $medium;
+    font-weight: $Weight700;
+    color: $White;
+  }
+  
+  &_description {
+    max-width: 35ch;
+    padding-block-start: $default;
+    padding-block-end: $medium;
+    font-size: $small;
+    line-height: 1.5;
+  }
+  
+  &_buttons-list {
+    display: flex;
+    justify-content: space-between;
+    padding-block-end: $default;
+    list-style: none;
+  }
+  
+  &_button {
+    @include overpass($Weight700);
+    min-width: $larger;
+    min-height: $larger;
+    border-radius: 100%;
+    font-size: $small;
+    color: $Grey500;
+    background-color: $Grey500low;
+    
+    &:hover {
+      cursor: pointer;
+      background-color: $Orange500;
+      color: $Grey950;
+    }
+    
+    &--active {
+      background-color: $White;
+      color: $Grey950;
+    }
+  }
+  
+  &_submit-button {
+    @include overpass($Weight850);
+    min-width: 100%;
+    margin-block: $smaller;
+    padding-block: $small;
+    font-size: $small;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    border-radius: 5rem;
+    color: $Grey950;
+    background-color: $Orange500;
+    
+    &:hover {
+      background-color: $White;
+    }
+  }
+  
+}
+
+.alert {
+  display: flex;
+  flex-direction: column;
+  row-gap: $large;
+  padding-block: $large;
+  padding-inline: $medium;
+  border-radius: $standerd;
+  background-color: $Grey900low;
+  
+  &--inactive {
+    display: none;
+  }
+  
+  &_header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 1.2rem;
+  }
+  
+  &_user-rating {
+    font-size: $small;
+    padding-inline: 0.8rem;
+    padding-block-start: 0.4rem;
+    padding-block-end: 0.2rem;
+    border-radius: 5rem;
+    background-color: $Grey500low;
+    color: $Orange500;
+  }
+
+  &_section {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    row-gap: $standerd;
+  }
+  
+  &_title {
+    font-size: $medium;
+    color: $White;
+  }
+  
+  &_description {
+    max-width: 35ch;
+    font-size: $small;
+    line-height: 1.5;
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 45rem) {
+  .feedback {
+    padding-inline: $large;
+    padding-block-start: $large;
+    row-gap: 2.4rem;
+    
+    &_title {
+      font-size: 1.72rem;
+    }
+    
+    &_button {
+      font-size: $standerd;
+    }
+  }
+  
+  .alert {
+    padding-inline: $medium;
+    padding-block: $larger;
+    
+    &_header {
+      row-gap: $large;
+    }
+    
+    &_title {
+      font-size: 1.72rem;
+    }
+    
+    &_description {
+      font-size: $standerd;
+    }
+  }
+}
